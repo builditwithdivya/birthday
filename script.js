@@ -31,3 +31,13 @@ function typeWriter() {
   }
 }
 typeWriter();
+const playBtn = document.getElementById("playMusic");
+const audio = document.getElementById("song");
+
+playBtn.addEventListener("click", () => {
+  audio.play().then(() => {
+    playBtn.style.display = "none"; // Hide the button after play
+  }).catch((err) => {
+    console.error("Audio failed to play:", err);
+  });
+});
